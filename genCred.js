@@ -28,9 +28,9 @@ if (args[0].slice(2, 3) != "=") {
   );
 }
 
-const cred = `const creds = {
-  id: ${args[0].split("=")[1]},
-  secret: ${args[1].split("=")[1]},
+const cred = `module.exports = {
+  id: "${args[0].split("=")[1]}",
+  secret: "${args[1].split("=")[1]}",
 };
 `;
 fs.writeFile("creds.js", cred, (err) => {
